@@ -1,0 +1,30 @@
+# Comparatif accessibilité numérique
+
+Ce dépôt propose une démonstration simple d'accessibilité numérique, à travers une page HTML comparative :  
+version **accessible** vs version **non accessible**.
+
+## Objectif
+
+Permettre de sensibiliser à l'importance de l'accessibilité web en illustrant concrètement :
+- les différences visuelles (contrastes, structure, navigation clavier),
+- les bonnes et mauvaises pratiques,
+- l'impact utilisateur.
+
+## Voir la démonstration
+
+[Accéder à la démo en ligne](https://delphdolce.github.io/accessibilite_comparative/)  
+⚠Il peut falloir quelques secondes pour que le lien fonctionne après mise à jour.
+
+## Contenu
+
+- `index.html` → page HTML avec version accessible / non accessible.
+- `README.md` → ce fichier d'information.
+
+## Licence
+
+Projet mis à disposition pour sensibilisation non commerciale.  
+Tu peux le modifier et l'utiliser librement, avec mention de la source.
+
+---
+
+**Créé par [@delphdolce](https://github.com/delphdolce)** ❤️
