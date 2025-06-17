@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beau vs Accessible</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #fff;
+      color: #333;
+    }
+    .toggle-buttons {
+      margin-bottom: 1rem;
+    }
+    .toggle-buttons button {
+      margin-right: 1rem;
+      padding: 0.5rem 1rem;
+    }
+    .version {
+      display: none;
+    }
+    .version.active {
+      display: block;
+    }
+    .non-accessible .hidden-text {
+      color: #ddd;
+    }
+    .accessible .hidden-text {
+      color: #333;
+    }
+    .accessible a:focus,
+    .accessible button:focus {
+      outline: 3px solid #0078D4;
+    }
+    .non-accessible a:focus,
+    .non-accessible button:focus {
+      outline: none;
+    }
+    .nav {
+      margin: 1rem 0;
+    }
+    .nav li {
+      display: inline;
+      margin-right: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle-buttons">
+    <button onclick="toggleVersion('non-accessible')">Version non accessible</button>
+    <button onclick="toggleVersion('accessible')">Version accessible</button>
+  </div>
+
+  <div id="non-accessible" class="version non-accessible active">
+    <h1 style="color: #aaa">Bienvenue</h1>
+    <ul class="nav">
+      <li>Accueil</li>
+      <li>À propos</li>
+      <li>Contact</li>
+    </ul>
+    <p class="hidden-text">Texte invisible pour les thèmes à contraste élevé</p>
+    <button>Cliquez ici</button>
+  </div>
+
+  <div id="accessible" class="version accessible">
+    <h1 style="color: #333">Bienvenue</h1>
+    <nav class="nav">
+      <a href="#">Accueil</a>
+      <a href="#">À propos</a>
+      <a href="#">Contact</a>
+    </nav>
+    <p class="hidden-text">Texte visible en contraste élevé</p>
+    <button aria-label="Ouvrir la page d'aide">Cliquez ici</button>
+  </div>
+
+  <script>
+    function toggleVersion(version) {
+      document.querySelectorAll('.version').forEach(el => el.classList.remove('active'));
+      document.getElementById(version).classList.add('active');
+    }
+  </script>
+</body>
+</html>
